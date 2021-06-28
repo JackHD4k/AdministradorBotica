@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Windows.Forms;
-using System.Data.SQLite;
 using System.Data;
+using System.Data.SQLite;
+using System.Windows.Forms;
 
 namespace AdministradorBotica
 {
@@ -23,32 +23,20 @@ namespace AdministradorBotica
         {
             panelInicial.Visible = true;
             panelAgregar.Visible = false;
+            panelEli.Visible = false;
+            panelInventario.Visible = false;
             refrescartabla();
         }
 
+        // Load del panel AGREGAR
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            // Load del panel AGREGAR
             con.Open();
             panelInicial.Visible = false;
             panelAgregar.Visible = true;
-            string select = "select * from producto";
-            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
-            DataTable tabla = new DataTable();
-            adb.Fill(tabla);
-            dgvAgregar.DataSource = tabla;
-
-            //Mostrar en combo box
-            cmbCategoria.Items.Clear();
-            string cate = "select nom_cat from categoria";
-            SQLiteCommand sql = new SQLiteCommand(cate,con);
-            sql.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SQLiteDataAdapter da = new SQLiteDataAdapter(sql);
-            da.Fill(dt);
-            cmbCategoria.DataSource = dt;
-            cmbCategoria.DisplayMember = "nom_cat";
-            cmbCategoria.SelectedIndex = 0;
+            panelInventario.Visible = false;
+            panelEli.Visible = false;
+            refrescartabla();
             con.Close();
         }
 
@@ -70,26 +58,234 @@ namespace AdministradorBotica
         }
 
         private void btnAgregarPanel_Click(object sender, EventArgs e)
-        {   
+        {
+
+        }
+        private void refrescartabla()
+        {
+            string select = "SELECT ID_PRO as ID, NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf('% .2f',PCO_PRO) as 'Precio de compra', printf('% .2f',PVE_PRO) as 'Precio de venta' from PRODUCTO";
+            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
+            DataTable tabla = new DataTable();
+            adb.Fill(tabla);
+            dgvAgregar.DataSource = tabla;
+            dgvIn.DataSource = tabla;
+            dgvEliMod.DataSource = tabla;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
             var cmd = new SQLiteCommand(con);
             con.Open();
+            cmd.CommandText = "insert into producto(NOM_PRO, MAR_PRO, STO_PRO, PVE_PRO, PCO_PRO, ID_CAT) values ('" + txbNombre.Text + "', '" + txbMarca.Text + "', '" + txbStock.Text + "', '" + txbVenta.Text + "', '" + txbCompra.Text + "', 4)";
+            cmd.ExecuteNonQuery();
+            refrescartabla();
+            con.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            var cmd = new SQLiteCommand(con);
             cmd.CommandText = "insert into producto(NOM_PRO, MAR_PRO, STO_PRO, PVE_PRO, PCO_PRO, ID_CAT) values ('" + txbNombre.Text + "', '" + txbMarca.Text + "', '" + txbStock.Text + "', '" + txbVenta.Text + "', '" + txbCompra.Text + "', 1)";
             cmd.ExecuteNonQuery();
             refrescartabla();
             con.Close();
         }
-        private void refrescartabla()
+
+        private void button7_Click(object sender, EventArgs e)
         {
-            string select = "select * from producto";
+            var cmd = new SQLiteCommand(con);
+            con.Open();
+            cmd.CommandText = "insert into producto(NOM_PRO, MAR_PRO, STO_PRO, PVE_PRO, PCO_PRO, ID_CAT) values ('" + txbNombre.Text + "', '" + txbMarca.Text + "', '" + txbStock.Text + "', '" + txbVenta.Text + "', '" + txbCompra.Text + "', 2)";
+            cmd.ExecuteNonQuery();
+            refrescartabla();
+            con.Close();
+        }
+
+        private void btnAmpollas_Click(object sender, EventArgs e)
+        {
+            var cmd = new SQLiteCommand(con);
+            con.Open();
+            cmd.CommandText = "insert into producto(NOM_PRO, MAR_PRO, STO_PRO, PVE_PRO, PCO_PRO, ID_CAT) values ('" + txbNombre.Text + "', '" + txbMarca.Text + "', '" + txbStock.Text + "', '" + txbVenta.Text + "', '" + txbCompra.Text + "', 3)";
+            cmd.ExecuteNonQuery();
+            refrescartabla();
+            con.Close();
+        }
+
+        private void btnBazar_Click(object sender, EventArgs e)
+        {
+            var cmd = new SQLiteCommand(con);
+            con.Open();
+            cmd.CommandText = "insert into producto(NOM_PRO, MAR_PRO, STO_PRO, PVE_PRO, PCO_PRO, ID_CAT) values ('" + txbNombre.Text + "', '" + txbMarca.Text + "', '" + txbStock.Text + "', '" + txbVenta.Text + "', '" + txbCompra.Text + "', 5)";
+            cmd.ExecuteNonQuery();
+            refrescartabla();
+            con.Close();
+        }
+
+        // Load del panel Inventario
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            panelInicial.Visible = false;
+            panelAgregar.Visible = false;
+            panelInventario.Visible = true;
+            panelEli.Visible = false;
+            refrescartabla();
+            con.Close();
+        }
+
+        private void btnPasIn_Click(object sender, EventArgs e)
+        {
+            string select = "SELECT NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf(' % .2f', PCO_PRO) as 'Precio de compra', printf(' % .2f', PVE_PRO) as 'Precio de venta' from PRODUCTO WHERE ID_CAT = 1";
             SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
             DataTable tabla = new DataTable();
             adb.Fill(tabla);
-            dgvAgregar.DataSource = tabla;
+            dgvIn.DataSource = tabla;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnJarIn_Click(object sender, EventArgs e)
         {
+            string select = "SELECT NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf(' % .2f', PCO_PRO) as 'Precio de compra', printf(' % .2f', PVE_PRO) as 'Precio de venta' from PRODUCTO WHERE ID_CAT = 2";
+            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
+            DataTable tabla = new DataTable();
+            adb.Fill(tabla);
+            dgvIn.DataSource = tabla;
+        }
 
+        private void btnAmpIn_Click(object sender, EventArgs e)
+        {
+            string select = "SELECT NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf(' % .2f', PCO_PRO) as 'Precio de compra', printf(' % .2f', PVE_PRO) as 'Precio de venta' from PRODUCTO WHERE ID_CAT = 3";
+            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
+            DataTable tabla = new DataTable();
+            adb.Fill(tabla);
+            dgvIn.DataSource = tabla;
+        }
+
+        private void btnAccIn_Click(object sender, EventArgs e)
+        {
+            string select = "SELECT NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf(' % .2f', PCO_PRO) as 'Precio de compra', printf(' % .2f', PVE_PRO) as 'Precio de venta' from PRODUCTO WHERE ID_CAT = 4";
+            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
+            DataTable tabla = new DataTable();
+            adb.Fill(tabla);
+            dgvIn.DataSource = tabla;
+        }
+
+        private void btnBazIn_Click(object sender, EventArgs e)
+        {
+            string select = "SELECT NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf(' % .2f', PCO_PRO) as 'Precio de compra', printf(' % .2f', PVE_PRO) as 'Precio de venta' from PRODUCTO WHERE ID_CAT = 5";
+            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
+            DataTable tabla = new DataTable();
+            adb.Fill(tabla);
+            dgvIn.DataSource = tabla;
+        }
+
+        // Load del panel Eliminar
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            panelInicial.Visible = false;
+            panelAgregar.Visible = false;
+            panelInventario.Visible = false;
+            panelEli.Visible = true;
+            refrescartabla();
+            con.Close();
+        }
+
+        private void btnPasEli_Click(object sender, EventArgs e)
+        {
+            string select = "SELECT ID_PRO as ID, NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf(' % .2f', PCO_PRO) as 'Precio de compra', printf(' % .2f', PVE_PRO) as 'Precio de venta' from PRODUCTO WHERE ID_CAT = 1";
+            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
+            DataTable tabla = new DataTable();
+            adb.Fill(tabla);
+            dgvEliMod.DataSource = tabla;
+        }
+
+        private void btnJarEli_Click(object sender, EventArgs e)
+        {
+            string select = "SELECT ID_PRO as ID, NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf(' % .2f', PCO_PRO) as 'Precio de compra', printf(' % .2f', PVE_PRO) as 'Precio de venta' from PRODUCTO WHERE ID_CAT = 2";
+            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
+            DataTable tabla = new DataTable();
+            adb.Fill(tabla);
+            dgvEliMod.DataSource = tabla;
+        }
+
+        private void btnAmpEli_Click(object sender, EventArgs e)
+        {
+            string select = "SELECT ID_PRO as ID, NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf(' % .2f', PCO_PRO) as 'Precio de compra', printf(' % .2f', PVE_PRO) as 'Precio de venta' from PRODUCTO WHERE ID_CAT = 3";
+            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
+            DataTable tabla = new DataTable();
+            adb.Fill(tabla);
+            dgvEliMod.DataSource = tabla;
+        }
+
+        private void btnAccEli_Click(object sender, EventArgs e)
+        {
+            string select = "SELECT ID_PRO as ID, NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf(' % .2f', PCO_PRO) as 'Precio de compra', printf(' % .2f', PVE_PRO) as 'Precio de venta' from PRODUCTO WHERE ID_CAT = 4";
+            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
+            DataTable tabla = new DataTable();
+            adb.Fill(tabla);
+            dgvEliMod.DataSource = tabla;
+        }
+
+        private void btnBazEli_Click(object sender, EventArgs e)
+        {
+            string select = "SELECT ID_PRO as ID, NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf(' % .2f', PCO_PRO) as 'Precio de compra', printf(' % .2f', PVE_PRO) as 'Precio de venta' from PRODUCTO WHERE ID_CAT = 5";
+            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
+            DataTable tabla = new DataTable();
+            adb.Fill(tabla);
+            dgvEliMod.DataSource = tabla;
+        }
+
+        private void dgvEliMod_SelectionChanged(object sender, EventArgs e)
+        {
+            txbIDEli.Text = dgvEliMod.Rows[dgvEliMod.CurrentCellAddress.Y].Cells[0].Value.ToString();
+            txbNombreEli.Text = dgvEliMod.Rows[dgvEliMod.CurrentCellAddress.Y].Cells[1].Value.ToString();
+            txbMarcaEli.Text = dgvEliMod.Rows[dgvEliMod.CurrentCellAddress.Y].Cells[2].Value.ToString();
+            txbStoEli.Text = dgvEliMod.Rows[dgvEliMod.CurrentCellAddress.Y].Cells[3].Value.ToString();
+            txbVenEli.Text = dgvEliMod.Rows[dgvEliMod.CurrentCellAddress.Y].Cells[4].Value.ToString();
+            txbComEli.Text = dgvEliMod.Rows[dgvEliMod.CurrentCellAddress.Y].Cells[5].Value.ToString();
+        }
+
+        private void btnEliminarEli_Click(object sender, EventArgs e)
+        {
+            string title = "Eliminar";
+            string message = "Esta seguro de que desea eliminar este elemento?";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult dialogResult = MessageBox.Show(message, title, buttons);
+            if (dialogResult == DialogResult.Yes)
+            {
+                var cmd = new SQLiteCommand(con);
+                con.Open();
+                cmd.CommandText = "delete from PRODUCTO where ID_PRO = '" + txbIDEli.Text + "'";
+                cmd.ExecuteNonQuery();
+                refrescartabla();
+                con.Close();
+            }
+            else
+            {
+                // No procede con la eliminación
+            }
+        }
+
+        private void btnModificarEli_Click(object sender, EventArgs e)
+        {
+            string title = "Modificar";
+            string message = "Esta seguro de que desea modificar este elemento?";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult dialogResult = MessageBox.Show(message, title, buttons);
+            if (dialogResult == DialogResult.Yes)
+            {
+                var cmd = new SQLiteCommand(con);
+                con.Open();
+                cmd.CommandText = "update producto set NOM_PRO = '"+ txbNombreEli.Text +"', MAR_PRO = '"+ txbMarcaEli.Text +"', STO_PRO = '"+ txbStoEli.Text +"', PVE_PRO = '"+ txbVenEli.Text +"', PCO_PRO = '"+ txbComEli.Text +"' where ID_PRO = '" + txbIDEli.Text + "'";
+                cmd.ExecuteNonQuery();
+                refrescartabla();
+                con.Close();
+            }
+            else
+            {
+                // No procede con la modificación
+            }
         }
     }
 }

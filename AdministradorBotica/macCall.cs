@@ -1,6 +1,4 @@
 ﻿using System.Net.NetworkInformation;
-using System;
-using System.Windows.Forms;
 
 namespace AdministradorBotica
 {
