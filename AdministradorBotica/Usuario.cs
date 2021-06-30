@@ -41,5 +41,14 @@ namespace AdministradorBotica
                     break;
             }
         }
+
+        private void txbContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                btnIngresar_Click(sender, e);
+            }
+        }
     }
 }

@@ -98,6 +98,7 @@ namespace AdministradorBotica
             this.txbContraseña.Size = new System.Drawing.Size(276, 20);
             this.txbContraseña.TabIndex = 4;
             this.txbContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txbContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbContraseña_KeyPress);
             // 
             // Usuario
             // 

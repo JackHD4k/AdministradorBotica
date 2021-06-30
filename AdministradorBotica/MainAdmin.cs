@@ -43,7 +43,7 @@ namespace AdministradorBotica
         private void label4_Click(object sender, EventArgs e)
         {
             string title = "Desarrollador";
-            string message = "Hecho por\n Joel Isaac Ramos cordova \n 962325551 \n joelramoscordova5@protonmail.com ";
+            string message = "Hecho por\n Joel Isaac Ramos Cordova \n 962325551 \n joelramoscordova5@protonmail.com ";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             MessageBox.Show(message, title, buttons);
         }
@@ -285,6 +285,27 @@ namespace AdministradorBotica
             else
             {
                 // No procede con la modificación
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            var cmd = new SQLiteCommand(con);
+            con.Open();
+            string select = "SELECT NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf(' % .2f', PCO_PRO) as 'Precio de compra', printf(' % .2f', PVE_PRO) as 'Precio de venta' from PRODUCTO WHERE NOM_PRO like '" + txbBuscar.Text + "%'";
+            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
+            DataTable tabla = new DataTable();
+            adb.Fill(tabla);
+            dgvIn.DataSource = tabla;
+            con.Close();
+        }
+
+        private void txbBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                btnBuscar_Click(sender, e);
             }
         }
     }
