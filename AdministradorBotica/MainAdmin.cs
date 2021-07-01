@@ -12,7 +12,7 @@ namespace AdministradorBotica
             InitializeComponent();
         }
 
-        SQLiteConnection con = new SQLiteConnection("Data Source = Z:/AdministradorBotica/AdministradorBotica/database.db");
+        private SQLiteConnection con = new SQLiteConnection("Data Source = Z:/AdministradorBotica/AdministradorBotica/database.db");
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -72,8 +72,8 @@ namespace AdministradorBotica
 
         private void btnAgregarPanel_Click(object sender, EventArgs e)
         {
-
         }
+
         private void refrescartabla()
         {
             string select = "SELECT ID_PRO as ID, NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf('% .2f',PCO_PRO) as 'Precio de compra', printf('% .2f',PVE_PRO) as 'Precio de venta' from PRODUCTO";
@@ -293,7 +293,7 @@ namespace AdministradorBotica
             {
                 var cmd = new SQLiteCommand(con);
                 con.Open();
-                cmd.CommandText = "update producto set NOM_PRO = '"+ txbNombreEli.Text +"', MAR_PRO = '"+ txbMarcaEli.Text +"', STO_PRO = '"+ txbStoEli.Text +"', PVE_PRO = '"+ txbVenEli.Text +"', PCO_PRO = '"+ txbComEli.Text +"' where ID_PRO = '" + txbIDEli.Text + "'";
+                cmd.CommandText = "update producto set NOM_PRO = '" + txbNombreEli.Text + "', MAR_PRO = '" + txbMarcaEli.Text + "', STO_PRO = '" + txbStoEli.Text + "', PVE_PRO = '" + txbVenEli.Text + "', PCO_PRO = '" + txbComEli.Text + "' where ID_PRO = '" + txbIDEli.Text + "'";
                 cmd.ExecuteNonQuery();
                 refrescartabla();
                 con.Close();
@@ -396,14 +396,13 @@ namespace AdministradorBotica
 
         private void button7_Click_2(object sender, EventArgs e)
         {
-
         }
 
         private void btnAgrSto_Click(object sender, EventArgs e)
         {
             var cmd = new SQLiteCommand(con);
             con.Open();
-            cmd.CommandText = "UPDATE PRODUCTO SET STO_PRO = STO_PRO + '"+ txbAgrSto.Text +"' WHERE ID_PRO = '"+ txbIdSto.Text +"'";
+            cmd.CommandText = "UPDATE PRODUCTO SET STO_PRO = STO_PRO + '" + txbAgrSto.Text + "' WHERE ID_PRO = '" + txbIdSto.Text + "'";
             cmd.ExecuteNonQuery();
             refrescartabla();
             con.Close();

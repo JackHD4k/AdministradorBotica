@@ -31,11 +31,13 @@ namespace AdministradorBotica
                     MainAdmin mainadmin = new MainAdmin();
                     mainadmin.Show();
                     break;
+
                 case passventas:
                     this.Hide();
                     MainVentas mainventas = new MainVentas();
                     mainventas.Show();
                     break;
+
                 default:
                     MessageBox.Show("Contraseña Incorrecta");
                     break;

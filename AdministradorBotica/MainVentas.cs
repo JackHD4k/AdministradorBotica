@@ -1,22 +1,22 @@
-﻿using System.Windows.Forms;
-using System.Data.SQLite;
+﻿using System;
 using System.Data;
-using System;
+using System.Data.SQLite;
+using System.Windows.Forms;
 
 namespace AdministradorBotica
 {
     public partial class MainVentas : Form
     {
-        string a;
-        decimal balance ;
-        decimal c;
+        private string a;
+        private decimal balance;
+        private decimal c;
 
         public MainVentas()
         {
             InitializeComponent();
         }
 
-        SQLiteConnection con = new SQLiteConnection("Data Source = Z:/AdministradorBotica/AdministradorBotica/database.db");
+        private SQLiteConnection con = new SQLiteConnection("Data Source = Z:/AdministradorBotica/AdministradorBotica/database.db");
 
         private void MainVentas_Load(object sender, System.EventArgs e)
         {
@@ -165,12 +165,8 @@ namespace AdministradorBotica
             con.Close();
         }
 
-
-
-
         private void lbxVentas_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void btnLimpiarVen_Click(object sender, EventArgs e)
