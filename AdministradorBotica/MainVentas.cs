@@ -8,8 +8,12 @@ namespace AdministradorBotica
     public partial class MainVentas : Form
     {
         private string a;
-        private decimal balance;
+        private decimal balance = 0;
         private decimal c;
+
+        private decimal precioventa = 0;
+        private string d;
+        private decimal f;
 
         public MainVentas()
         {
@@ -139,9 +143,12 @@ namespace AdministradorBotica
                 cmd.CommandText = "update PRODUCTO set STO_PRO = STO_PRO -'" + txbVender.Text + "'  where ID_PRO = '" + txbID.Text + "'";
                 cmd.ExecuteNonQuery();
                 con.Close();
-                ganancias();
-
+                
+                txbGanancia.Text = "S/ " + ganancias().ToString();
+                txbVenVen.Text = "S/ " + ventatotal().ToString();
+                
                 lbxVentas.Items.Add("PRODUCTO -> " + txbBuscar.Text + " + CANTIDAD -> " + txbVender.Text);
+
             }
             else
             {
@@ -149,7 +156,7 @@ namespace AdministradorBotica
             }
         }
 
-        private void ganancias()
+        private decimal ganancias()
         {
             con.Open();
             string query = "SELECT (PVE_PRO - PCO_PRO) * '" + txbVender.Text + "' AS VENTAS FROM PRODUCTO WHERE ID_PRO = '" + txbID.Text + "'";
@@ -160,9 +167,25 @@ namespace AdministradorBotica
                 a = dr["ventas"].ToString();
                 c = Convert.ToDecimal(a);
                 balance += c;
-                txbGanancia.Text = "S/ " + balance.ToString();
             }
             con.Close();
+            return balance;
+        }
+
+        private decimal ventatotal()
+        {
+            con.Open();
+            string query = "SELECT PVE_PRO * '"+ txbVender.Text +"'  AS VENTAS FROM PRODUCTO WHERE ID_PRO = '" + txbID.Text + "'";
+            SQLiteCommand slc = new SQLiteCommand(query, con);
+            SQLiteDataReader dr = slc.ExecuteReader();
+            while (dr.Read())
+            {
+                d = dr["ventas"].ToString();
+                f = Convert.ToDecimal(d);
+                precioventa += f;
+            }
+            con.Close();
+            return precioventa;
         }
 
         private void lbxVentas_SelectedIndexChanged(object sender, EventArgs e)
@@ -179,6 +202,9 @@ namespace AdministradorBotica
             {
                 lbxVentas.Items.Clear();
                 txbGanancia.Clear();
+                txbVenVen.Clear();
+                balance = 0;
+                precioventa = 0;
             }
             else
             {

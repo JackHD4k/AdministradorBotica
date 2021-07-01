@@ -410,8 +410,13 @@ namespace AdministradorBotica
 
         private void dgvStock_SelectionChanged(object sender, EventArgs e)
         {
-            txbIdSto.Text = dgvEliMod.Rows[dgvEliMod.CurrentCellAddress.Y].Cells[0].Value.ToString();
-            txbNomSto.Text = dgvEliMod.Rows[dgvEliMod.CurrentCellAddress.Y].Cells[1].Value.ToString();
+            txbIdSto.Text = dgvStock.Rows[dgvStock.CurrentCellAddress.Y].Cells[0].Value.ToString();
+            txbNomSto.Text = dgvStock.Rows[dgvStock.CurrentCellAddress.Y].Cells[1].Value.ToString();
+        }
+
+        private void dgvIn_SelectionChanged(object sender, EventArgs e)
+        {
+            txbBuscar.Text = dgvIn.Rows[dgvIn.CurrentCellAddress.Y].Cells[1].Value.ToString();
         }
     }
 }

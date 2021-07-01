@@ -96,6 +96,8 @@ namespace AdministradorBotica
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelStock = new System.Windows.Forms.Panel();
+            this.txbIdSto = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.btnAgrSto = new System.Windows.Forms.Button();
             this.txbAgrSto = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -109,8 +111,6 @@ namespace AdministradorBotica
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.txbIdSto = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.panelInicial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelAgregar.SuspendLayout();
@@ -624,6 +624,7 @@ namespace AdministradorBotica
             this.dgvIn.ReadOnly = true;
             this.dgvIn.Size = new System.Drawing.Size(931, 426);
             this.dgvIn.TabIndex = 0;
+            this.dgvIn.SelectionChanged += new System.EventHandler(this.dgvIn_SelectionChanged);
             // 
             // groupBox2
             // 
@@ -919,6 +920,26 @@ namespace AdministradorBotica
             this.panelStock.Size = new System.Drawing.Size(934, 776);
             this.panelStock.TabIndex = 34;
             // 
+            // txbIdSto
+            // 
+            this.txbIdSto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbIdSto.Location = new System.Drawing.Point(244, 182);
+            this.txbIdSto.Name = "txbIdSto";
+            this.txbIdSto.ReadOnly = true;
+            this.txbIdSto.Size = new System.Drawing.Size(100, 30);
+            this.txbIdSto.TabIndex = 52;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(95, 187);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(37, 25);
+            this.label19.TabIndex = 51;
+            this.label19.Text = "ID:";
+            // 
             // btnAgrSto
             // 
             this.btnAgrSto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1065,26 +1086,6 @@ namespace AdministradorBotica
             this.button7.Text = "PASTILLAS";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click_1);
-            // 
-            // txbIdSto
-            // 
-            this.txbIdSto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbIdSto.Location = new System.Drawing.Point(244, 182);
-            this.txbIdSto.Name = "txbIdSto";
-            this.txbIdSto.ReadOnly = true;
-            this.txbIdSto.Size = new System.Drawing.Size(100, 30);
-            this.txbIdSto.TabIndex = 52;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(95, 187);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(37, 25);
-            this.label19.TabIndex = 51;
-            this.label19.Text = "ID:";
             // 
             // MainAdmin
             // 
