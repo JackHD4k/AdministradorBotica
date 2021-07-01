@@ -7,6 +7,10 @@ namespace AdministradorBotica
 {
     public partial class MainVentas : Form
     {
+        string a;
+        decimal balance ;
+        decimal c;
+
         public MainVentas()
         {
             InitializeComponent();
@@ -109,6 +113,8 @@ namespace AdministradorBotica
         {
             txbID.Text = dgvIn.Rows[dgvIn.CurrentCellAddress.Y].Cells[0].Value.ToString();
             txbBuscar.Text = dgvIn.Rows[dgvIn.CurrentCellAddress.Y].Cells[1].Value.ToString();
+            txbCompra.Text = dgvIn.Rows[dgvIn.CurrentCellAddress.Y].Cells[4].Value.ToString();
+            txbVenta.Text = dgvIn.Rows[dgvIn.CurrentCellAddress.Y].Cells[5].Value.ToString();
         }
 
         private void btnVender_Click(object sender, EventArgs e)
@@ -124,15 +130,31 @@ namespace AdministradorBotica
                 cmd.CommandText = "update PRODUCTO set STO_PRO = STO_PRO -'" + txbVender.Text + "'  where ID_PRO = '" + txbID.Text + "'";
                 cmd.ExecuteNonQuery();
                 con.Close();
+                ganancias();
             }
             else
             {
-                // No procede con la eliminación
+                // No procede con la venta
             }
-
-            //
-            lbxVentas.Items.Add("Producto"+txbBuscar.Text + "Cantidad" + txbVender.Text);
         }
+
+        private void ganancias()
+        {
+            con.Open();
+            string query = "SELECT (PVE_PRO - PCO_PRO) * '" + txbVender.Text + "' AS VENTAS FROM PRODUCTO WHERE ID_PRO = '" + txbID.Text + "'";
+            SQLiteCommand slc = new SQLiteCommand(query, con);
+            SQLiteDataReader dr = slc.ExecuteReader();
+            while (dr.Read())
+            {
+                a = dr["ventas"].ToString();
+                c = Convert.ToDecimal(a);
+                balance += c;
+                txbGanancia.Text = "S/ " + balance.ToString() + " Soles";
+            }
+            con.Close();
+        }
+
+
 
 
         private void lbxVentas_SelectedIndexChanged(object sender, EventArgs e)
