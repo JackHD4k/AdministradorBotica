@@ -13,7 +13,7 @@ namespace AdministradorBotica
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainVentas());
+            Application.Run(new Login());
         }
     }
 }

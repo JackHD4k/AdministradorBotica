@@ -27,7 +27,18 @@ namespace AdministradorBotica
 
         private void btnSalir_Click(object sender, System.EventArgs e)
         {
-            Application.Exit();
+            string title = "Salir";
+            string message = "Esta seguro que desea salir?";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult dialogResult = MessageBox.Show(message, title, buttons);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                //No procede con la limpieza
+            }
         }
 
         private void label4_Click(object sender, System.EventArgs e)
@@ -113,8 +124,6 @@ namespace AdministradorBotica
         {
             txbID.Text = dgvIn.Rows[dgvIn.CurrentCellAddress.Y].Cells[0].Value.ToString();
             txbBuscar.Text = dgvIn.Rows[dgvIn.CurrentCellAddress.Y].Cells[1].Value.ToString();
-            txbCompra.Text = dgvIn.Rows[dgvIn.CurrentCellAddress.Y].Cells[4].Value.ToString();
-            txbVenta.Text = dgvIn.Rows[dgvIn.CurrentCellAddress.Y].Cells[5].Value.ToString();
         }
 
         private void btnVender_Click(object sender, EventArgs e)
@@ -131,6 +140,8 @@ namespace AdministradorBotica
                 cmd.ExecuteNonQuery();
                 con.Close();
                 ganancias();
+
+                lbxVentas.Items.Add("PRODUCTO -> " + txbBuscar.Text + " + CANTIDAD -> " + txbVender.Text);
             }
             else
             {
@@ -149,7 +160,7 @@ namespace AdministradorBotica
                 a = dr["ventas"].ToString();
                 c = Convert.ToDecimal(a);
                 balance += c;
-                txbGanancia.Text = "S/ " + balance.ToString() + " Soles";
+                txbGanancia.Text = "S/ " + balance.ToString();
             }
             con.Close();
         }
@@ -160,6 +171,23 @@ namespace AdministradorBotica
         private void lbxVentas_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLimpiarVen_Click(object sender, EventArgs e)
+        {
+            string title = "Finalizar";
+            string message = "Esta seguro de que desea limpiar?";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult dialogResult = MessageBox.Show(message, title, buttons);
+            if (dialogResult == DialogResult.Yes)
+            {
+                lbxVentas.Items.Clear();
+                txbGanancia.Clear();
+            }
+            else
+            {
+                //No procede con la limpieza
+            }
         }
     }
 }
