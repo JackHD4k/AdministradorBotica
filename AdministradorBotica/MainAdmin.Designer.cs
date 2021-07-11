@@ -135,7 +135,7 @@ namespace AdministradorBotica
             this.panelInicial.Controls.Add(this.pictureBox2);
             this.panelInicial.Location = new System.Drawing.Point(254, 12);
             this.panelInicial.Name = "panelInicial";
-            this.panelInicial.Size = new System.Drawing.Size(934, 776);
+            this.panelInicial.Size = new System.Drawing.Size(934, 676);
             this.panelInicial.TabIndex = 1;
             // 
             // pictureBox2
@@ -166,7 +166,7 @@ namespace AdministradorBotica
             this.panelAgregar.Controls.Add(this.label8);
             this.panelAgregar.Location = new System.Drawing.Point(254, 12);
             this.panelAgregar.Name = "panelAgregar";
-            this.panelAgregar.Size = new System.Drawing.Size(934, 776);
+            this.panelAgregar.Size = new System.Drawing.Size(934, 676);
             this.panelAgregar.TabIndex = 1;
             // 
             // groupBox1
@@ -248,7 +248,7 @@ namespace AdministradorBotica
             // txbStock
             // 
             this.txbStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbStock.Location = new System.Drawing.Point(306, 198);
+            this.txbStock.Location = new System.Drawing.Point(306, 151);
             this.txbStock.Name = "txbStock";
             this.txbStock.Size = new System.Drawing.Size(327, 30);
             this.txbStock.TabIndex = 15;
@@ -258,7 +258,7 @@ namespace AdministradorBotica
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(67, 201);
+            this.label10.Location = new System.Drawing.Point(67, 154);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(90, 25);
             this.label10.TabIndex = 14;
@@ -267,7 +267,7 @@ namespace AdministradorBotica
             // btnLimpiarPanel
             // 
             this.btnLimpiarPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarPanel.Location = new System.Drawing.Point(696, 431);
+            this.btnLimpiarPanel.Location = new System.Drawing.Point(433, 264);
             this.btnLimpiarPanel.Name = "btnLimpiarPanel";
             this.btnLimpiarPanel.Size = new System.Drawing.Size(200, 34);
             this.btnLimpiarPanel.TabIndex = 13;
@@ -278,7 +278,7 @@ namespace AdministradorBotica
             // txbMarca
             // 
             this.txbMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMarca.Location = new System.Drawing.Point(306, 162);
+            this.txbMarca.Location = new System.Drawing.Point(306, 115);
             this.txbMarca.Name = "txbMarca";
             this.txbMarca.Size = new System.Drawing.Size(327, 30);
             this.txbMarca.TabIndex = 10;
@@ -286,7 +286,7 @@ namespace AdministradorBotica
             // txbCompra
             // 
             this.txbCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCompra.Location = new System.Drawing.Point(306, 235);
+            this.txbCompra.Location = new System.Drawing.Point(306, 188);
             this.txbCompra.Name = "txbCompra";
             this.txbCompra.Size = new System.Drawing.Size(327, 30);
             this.txbCompra.TabIndex = 9;
@@ -294,7 +294,7 @@ namespace AdministradorBotica
             // txbVenta
             // 
             this.txbVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbVenta.Location = new System.Drawing.Point(306, 271);
+            this.txbVenta.Location = new System.Drawing.Point(306, 224);
             this.txbVenta.Name = "txbVenta";
             this.txbVenta.Size = new System.Drawing.Size(327, 30);
             this.txbVenta.TabIndex = 8;
@@ -302,7 +302,7 @@ namespace AdministradorBotica
             // txbNombre
             // 
             this.txbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNombre.Location = new System.Drawing.Point(306, 126);
+            this.txbNombre.Location = new System.Drawing.Point(306, 79);
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(327, 30);
             this.txbNombre.TabIndex = 7;
@@ -312,7 +312,7 @@ namespace AdministradorBotica
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(67, 129);
+            this.label5.Location = new System.Drawing.Point(67, 82);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 25);
             this.label5.TabIndex = 1;
@@ -323,7 +323,7 @@ namespace AdministradorBotica
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(67, 165);
+            this.label9.Location = new System.Drawing.Point(67, 118);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(91, 25);
             this.label9.TabIndex = 5;
@@ -334,10 +334,11 @@ namespace AdministradorBotica
             this.dgvAgregar.AllowUserToAddRows = false;
             this.dgvAgregar.AllowUserToDeleteRows = false;
             this.dgvAgregar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAgregar.Location = new System.Drawing.Point(0, 515);
+            this.dgvAgregar.Location = new System.Drawing.Point(0, 420);
             this.dgvAgregar.Name = "dgvAgregar";
             this.dgvAgregar.ReadOnly = true;
-            this.dgvAgregar.Size = new System.Drawing.Size(934, 261);
+            this.dgvAgregar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvAgregar.Size = new System.Drawing.Size(934, 256);
             this.dgvAgregar.TabIndex = 0;
             // 
             // label7
@@ -345,7 +346,7 @@ namespace AdministradorBotica
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(67, 274);
+            this.label7.Location = new System.Drawing.Point(67, 227);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(198, 25);
             this.label7.TabIndex = 3;
@@ -356,7 +357,7 @@ namespace AdministradorBotica
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(67, 238);
+            this.label8.Location = new System.Drawing.Point(67, 191);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(218, 25);
             this.label8.TabIndex = 4;
@@ -383,7 +384,7 @@ namespace AdministradorBotica
             this.panelEli.Controls.Add(this.groupBox3);
             this.panelEli.Location = new System.Drawing.Point(254, 12);
             this.panelEli.Name = "panelEli";
-            this.panelEli.Size = new System.Drawing.Size(934, 776);
+            this.panelEli.Size = new System.Drawing.Size(934, 676);
             this.panelEli.TabIndex = 18;
             // 
             // txbIDEli
@@ -534,7 +535,7 @@ namespace AdministradorBotica
             this.dgvEliMod.Name = "dgvEliMod";
             this.dgvEliMod.ReadOnly = true;
             this.dgvEliMod.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvEliMod.Size = new System.Drawing.Size(934, 386);
+            this.dgvEliMod.Size = new System.Drawing.Size(934, 286);
             this.dgvEliMod.TabIndex = 19;
             this.dgvEliMod.SelectionChanged += new System.EventHandler(this.dgvEliMod_SelectionChanged);
             // 
@@ -622,7 +623,8 @@ namespace AdministradorBotica
             this.dgvIn.Location = new System.Drawing.Point(0, 350);
             this.dgvIn.Name = "dgvIn";
             this.dgvIn.ReadOnly = true;
-            this.dgvIn.Size = new System.Drawing.Size(931, 426);
+            this.dgvIn.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvIn.Size = new System.Drawing.Size(931, 326);
             this.dgvIn.TabIndex = 0;
             this.dgvIn.SelectionChanged += new System.EventHandler(this.dgvIn_SelectionChanged);
             // 
@@ -732,7 +734,7 @@ namespace AdministradorBotica
             this.panelInventario.Controls.Add(this.dgvIn);
             this.panelInventario.Location = new System.Drawing.Point(254, 12);
             this.panelInventario.Name = "panelInventario";
-            this.panelInventario.Size = new System.Drawing.Size(934, 776);
+            this.panelInventario.Size = new System.Drawing.Size(934, 676);
             this.panelInventario.TabIndex = 17;
             // 
             // btnBuscar
@@ -763,7 +765,7 @@ namespace AdministradorBotica
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(236, 776);
+            this.panel1.Size = new System.Drawing.Size(236, 676);
             this.panel1.TabIndex = 0;
             // 
             // button1
@@ -821,7 +823,7 @@ namespace AdministradorBotica
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(150)))), ((int)(((byte)(173)))));
-            this.label4.Location = new System.Drawing.Point(95, 726);
+            this.label4.Location = new System.Drawing.Point(94, 645);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 7;
@@ -832,7 +834,7 @@ namespace AdministradorBotica
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(61)))));
-            this.label3.Location = new System.Drawing.Point(-3, 683);
+            this.label3.Location = new System.Drawing.Point(-3, 602);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(239, 23);
             this.label3.TabIndex = 6;
@@ -862,7 +864,7 @@ namespace AdministradorBotica
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(70)))), ((int)(((byte)(88)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(166)))), ((int)(((byte)(173)))));
-            this.btnSalir.Location = new System.Drawing.Point(0, 621);
+            this.btnSalir.Location = new System.Drawing.Point(0, 552);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(236, 47);
             this.btnSalir.TabIndex = 4;
@@ -917,7 +919,7 @@ namespace AdministradorBotica
             this.panelStock.Controls.Add(this.groupBox4);
             this.panelStock.Location = new System.Drawing.Point(254, 12);
             this.panelStock.Name = "panelStock";
-            this.panelStock.Size = new System.Drawing.Size(934, 776);
+            this.panelStock.Size = new System.Drawing.Size(934, 676);
             this.panelStock.TabIndex = 34;
             // 
             // txbIdSto
@@ -976,7 +978,8 @@ namespace AdministradorBotica
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStock.Location = new System.Drawing.Point(0, 431);
             this.dgvStock.Name = "dgvStock";
-            this.dgvStock.Size = new System.Drawing.Size(934, 345);
+            this.dgvStock.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvStock.Size = new System.Drawing.Size(934, 245);
             this.dgvStock.TabIndex = 47;
             this.dgvStock.SelectionChanged += new System.EventHandler(this.dgvStock_SelectionChanged);
             // 
@@ -1092,17 +1095,17 @@ namespace AdministradorBotica
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(76)))), ((int)(((byte)(97)))));
-            this.ClientSize = new System.Drawing.Size(1200, 800);
+            this.ClientSize = new System.Drawing.Size(1200, 701);
             this.Controls.Add(this.panelStock);
             this.Controls.Add(this.panelEli);
             this.Controls.Add(this.panelInventario);
             this.Controls.Add(this.panelAgregar);
             this.Controls.Add(this.panelInicial);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PrincipalMain";
+            this.Text = "ADMINISTRADOR";
             this.Load += new System.EventHandler(this.MainAdmin_Load);
             this.panelInicial.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

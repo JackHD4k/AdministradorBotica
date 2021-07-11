@@ -20,7 +20,7 @@ namespace AdministradorBotica
             InitializeComponent();
         }
 
-        private SQLiteConnection con = new SQLiteConnection("Data Source = Z:/AdministradorBotica/AdministradorBotica/database.db");
+        private SQLiteConnection con = new SQLiteConnection("Data Source = C:/database.db");
 
         private void MainVentas_Load(object sender, System.EventArgs e)
         {
