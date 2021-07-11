@@ -57,12 +57,13 @@ namespace AdministradorBotica
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelVenta = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbxVentas = new System.Windows.Forms.ListBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txbVenVen = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnLimpiarVen = new System.Windows.Forms.Button();
             this.txbGanancia = new System.Windows.Forms.TextBox();
-            this.txbCompra = new System.Windows.Forms.TextBox();
-            this.txbVenta = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbxVentas = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panelInventario.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIn)).BeginInit();
@@ -76,8 +77,6 @@ namespace AdministradorBotica
             // panelInventario
             // 
             this.panelInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(103)))), ((int)(((byte)(117)))));
-            this.panelInventario.Controls.Add(this.txbVenta);
-            this.panelInventario.Controls.Add(this.txbCompra);
             this.panelInventario.Controls.Add(this.txbVender);
             this.panelInventario.Controls.Add(this.btnVender);
             this.panelInventario.Controls.Add(this.txbID);
@@ -89,7 +88,7 @@ namespace AdministradorBotica
             this.panelInventario.Controls.Add(this.dgvIn);
             this.panelInventario.Location = new System.Drawing.Point(254, 12);
             this.panelInventario.Name = "panelInventario";
-            this.panelInventario.Size = new System.Drawing.Size(934, 776);
+            this.panelInventario.Size = new System.Drawing.Size(934, 677);
             this.panelInventario.TabIndex = 22;
             // 
             // txbVender
@@ -247,7 +246,7 @@ namespace AdministradorBotica
             this.dgvIn.Location = new System.Drawing.Point(0, 474);
             this.dgvIn.Name = "dgvIn";
             this.dgvIn.ReadOnly = true;
-            this.dgvIn.Size = new System.Drawing.Size(931, 302);
+            this.dgvIn.Size = new System.Drawing.Size(931, 203);
             this.dgvIn.TabIndex = 0;
             this.dgvIn.SelectionChanged += new System.EventHandler(this.dgvIn_SelectionChanged);
             // 
@@ -257,7 +256,7 @@ namespace AdministradorBotica
             this.panelInicial.Controls.Add(this.pictureBox2);
             this.panelInicial.Location = new System.Drawing.Point(254, 12);
             this.panelInicial.Name = "panelInicial";
-            this.panelInicial.Size = new System.Drawing.Size(934, 776);
+            this.panelInicial.Size = new System.Drawing.Size(934, 677);
             this.panelInicial.TabIndex = 21;
             // 
             // pictureBox2
@@ -284,7 +283,7 @@ namespace AdministradorBotica
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(236, 776);
+            this.panel1.Size = new System.Drawing.Size(236, 677);
             this.panel1.TabIndex = 19;
             // 
             // btnVentas
@@ -326,7 +325,7 @@ namespace AdministradorBotica
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(150)))), ((int)(((byte)(173)))));
-            this.label4.Location = new System.Drawing.Point(95, 726);
+            this.label4.Location = new System.Drawing.Point(95, 629);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 7;
@@ -337,7 +336,7 @@ namespace AdministradorBotica
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(61)))));
-            this.label3.Location = new System.Drawing.Point(-3, 683);
+            this.label3.Location = new System.Drawing.Point(-3, 591);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(239, 23);
             this.label3.TabIndex = 6;
@@ -351,7 +350,7 @@ namespace AdministradorBotica
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(70)))), ((int)(((byte)(88)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(166)))), ((int)(((byte)(173)))));
-            this.btnSalir.Location = new System.Drawing.Point(0, 570);
+            this.btnSalir.Location = new System.Drawing.Point(0, 541);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(236, 47);
             this.btnSalir.TabIndex = 4;
@@ -395,14 +394,80 @@ namespace AdministradorBotica
             // panelVenta
             // 
             this.panelVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(103)))), ((int)(((byte)(117)))));
+            this.panelVenta.Controls.Add(this.txbVenVen);
+            this.panelVenta.Controls.Add(this.label7);
+            this.panelVenta.Controls.Add(this.btnLimpiarVen);
             this.panelVenta.Controls.Add(this.txbGanancia);
             this.panelVenta.Controls.Add(this.label6);
             this.panelVenta.Controls.Add(this.lbxVentas);
             this.panelVenta.Controls.Add(this.label5);
             this.panelVenta.Location = new System.Drawing.Point(254, 12);
             this.panelVenta.Name = "panelVenta";
-            this.panelVenta.Size = new System.Drawing.Size(934, 776);
+            this.panelVenta.Size = new System.Drawing.Size(934, 677);
             this.panelVenta.TabIndex = 39;
+            // 
+            // txbVenVen
+            // 
+            this.txbVenVen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbVenVen.Location = new System.Drawing.Point(179, 452);
+            this.txbVenVen.Name = "txbVenVen";
+            this.txbVenVen.ReadOnly = true;
+            this.txbVenVen.Size = new System.Drawing.Size(190, 30);
+            this.txbVenVen.TabIndex = 37;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(13, 457);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(158, 25);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "VENTA TOTAL:";
+            // 
+            // btnLimpiarVen
+            // 
+            this.btnLimpiarVen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarVen.ForeColor = System.Drawing.Color.Black;
+            this.btnLimpiarVen.Location = new System.Drawing.Point(755, 678);
+            this.btnLimpiarVen.Name = "btnLimpiarVen";
+            this.btnLimpiarVen.Size = new System.Drawing.Size(161, 61);
+            this.btnLimpiarVen.TabIndex = 35;
+            this.btnLimpiarVen.Text = "LIMPIAR";
+            this.btnLimpiarVen.UseVisualStyleBackColor = true;
+            this.btnLimpiarVen.Click += new System.EventHandler(this.btnLimpiarVen_Click);
+            // 
+            // txbGanancia
+            // 
+            this.txbGanancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbGanancia.Location = new System.Drawing.Point(654, 452);
+            this.txbGanancia.Name = "txbGanancia";
+            this.txbGanancia.ReadOnly = true;
+            this.txbGanancia.Size = new System.Drawing.Size(194, 30);
+            this.txbGanancia.TabIndex = 27;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(453, 455);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(195, 25);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "GANANCIA TOTAL:";
+            // 
+            // lbxVentas
+            // 
+            this.lbxVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxVentas.FormattingEnabled = true;
+            this.lbxVentas.ItemHeight = 25;
+            this.lbxVentas.Location = new System.Drawing.Point(18, 83);
+            this.lbxVentas.Name = "lbxVentas";
+            this.lbxVentas.ScrollAlwaysVisible = true;
+            this.lbxVentas.Size = new System.Drawing.Size(898, 329);
+            this.lbxVentas.TabIndex = 1;
             // 
             // label5
             // 
@@ -415,66 +480,21 @@ namespace AdministradorBotica
             this.label5.TabIndex = 0;
             this.label5.Text = "VENTAS DEL DÍA:";
             // 
-            // lbxVentas
-            // 
-            this.lbxVentas.FormattingEnabled = true;
-            this.lbxVentas.Location = new System.Drawing.Point(18, 83);
-            this.lbxVentas.Name = "lbxVentas";
-            this.lbxVentas.ScrollAlwaysVisible = true;
-            this.lbxVentas.Size = new System.Drawing.Size(898, 147);
-            this.lbxVentas.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(446, 264);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(218, 25);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "GANANCIAS DEL DÍA:";
-            // 
-            // txbGanancia
-            // 
-            this.txbGanancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbGanancia.Location = new System.Drawing.Point(670, 261);
-            this.txbGanancia.Name = "txbGanancia";
-            this.txbGanancia.ReadOnly = true;
-            this.txbGanancia.Size = new System.Drawing.Size(246, 30);
-            this.txbGanancia.TabIndex = 27;
-            // 
-            // txbCompra
-            // 
-            this.txbCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCompra.Location = new System.Drawing.Point(100, 278);
-            this.txbCompra.Name = "txbCompra";
-            this.txbCompra.Size = new System.Drawing.Size(102, 30);
-            this.txbCompra.TabIndex = 41;
-            // 
-            // txbVenta
-            // 
-            this.txbVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbVenta.Location = new System.Drawing.Point(100, 318);
-            this.txbVenta.Name = "txbVenta";
-            this.txbVenta.Size = new System.Drawing.Size(102, 30);
-            this.txbVenta.TabIndex = 42;
-            // 
             // MainVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AdministradorBotica.Properties.Resources.FondodeUsuario;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1200, 800);
+            this.ClientSize = new System.Drawing.Size(1200, 701);
             this.Controls.Add(this.panelVenta);
             this.Controls.Add(this.panelInventario);
             this.Controls.Add(this.panelInicial);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainVentas";
+            this.Text = "VENDEDOR";
             this.Load += new System.EventHandler(this.MainVentas_Load);
             this.panelInventario.ResumeLayout(false);
             this.panelInventario.PerformLayout();
@@ -523,7 +543,8 @@ namespace AdministradorBotica
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txbGanancia;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txbVenta;
-        private System.Windows.Forms.TextBox txbCompra;
+        private System.Windows.Forms.Button btnLimpiarVen;
+        private System.Windows.Forms.TextBox txbVenVen;
+        private System.Windows.Forms.Label label7;
     }
 }

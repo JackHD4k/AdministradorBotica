@@ -31,6 +31,7 @@ namespace AdministradorBotica
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainAdmin));
             this.panelInicial = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelAgregar = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAmpollas = new System.Windows.Forms.Button();
@@ -74,20 +75,19 @@ namespace AdministradorBotica
             this.btnPasEli = new System.Windows.Forms.Button();
             this.dgvIn = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnPasIn = new System.Windows.Forms.Button();
-            this.btnJarIn = new System.Windows.Forms.Button();
-            this.btnBazIn = new System.Windows.Forms.Button();
-            this.btnAccIn = new System.Windows.Forms.Button();
             this.btnAmpIn = new System.Windows.Forms.Button();
+            this.btnAccIn = new System.Windows.Forms.Button();
+            this.btnBazIn = new System.Windows.Forms.Button();
+            this.btnJarIn = new System.Windows.Forms.Button();
+            this.btnPasIn = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.txbBuscar = new System.Windows.Forms.TextBox();
             this.panelInventario = new System.Windows.Forms.Panel();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -95,7 +95,24 @@ namespace AdministradorBotica
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelStock = new System.Windows.Forms.Panel();
+            this.txbIdSto = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btnAgrSto = new System.Windows.Forms.Button();
+            this.txbAgrSto = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.dgvStock = new System.Windows.Forms.DataGridView();
+            this.btnBus = new System.Windows.Forms.Button();
+            this.txbNomSto = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.panelInicial.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelAgregar.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgregar)).BeginInit();
@@ -105,9 +122,11 @@ namespace AdministradorBotica
             ((System.ComponentModel.ISupportInitialize)(this.dgvIn)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panelInventario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelStock.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelInicial
@@ -116,8 +135,18 @@ namespace AdministradorBotica
             this.panelInicial.Controls.Add(this.pictureBox2);
             this.panelInicial.Location = new System.Drawing.Point(254, 12);
             this.panelInicial.Name = "panelInicial";
-            this.panelInicial.Size = new System.Drawing.Size(934, 776);
+            this.panelInicial.Size = new System.Drawing.Size(934, 676);
             this.panelInicial.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::AdministradorBotica.Properties.Resources.logo_farma;
+            this.pictureBox2.Location = new System.Drawing.Point(271, 171);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(400, 400);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // panelAgregar
             // 
@@ -137,7 +166,7 @@ namespace AdministradorBotica
             this.panelAgregar.Controls.Add(this.label8);
             this.panelAgregar.Location = new System.Drawing.Point(254, 12);
             this.panelAgregar.Name = "panelAgregar";
-            this.panelAgregar.Size = new System.Drawing.Size(934, 776);
+            this.panelAgregar.Size = new System.Drawing.Size(934, 676);
             this.panelAgregar.TabIndex = 1;
             // 
             // groupBox1
@@ -219,7 +248,7 @@ namespace AdministradorBotica
             // txbStock
             // 
             this.txbStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbStock.Location = new System.Drawing.Point(306, 198);
+            this.txbStock.Location = new System.Drawing.Point(306, 151);
             this.txbStock.Name = "txbStock";
             this.txbStock.Size = new System.Drawing.Size(327, 30);
             this.txbStock.TabIndex = 15;
@@ -229,7 +258,7 @@ namespace AdministradorBotica
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(67, 201);
+            this.label10.Location = new System.Drawing.Point(67, 154);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(90, 25);
             this.label10.TabIndex = 14;
@@ -238,7 +267,7 @@ namespace AdministradorBotica
             // btnLimpiarPanel
             // 
             this.btnLimpiarPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarPanel.Location = new System.Drawing.Point(696, 431);
+            this.btnLimpiarPanel.Location = new System.Drawing.Point(433, 264);
             this.btnLimpiarPanel.Name = "btnLimpiarPanel";
             this.btnLimpiarPanel.Size = new System.Drawing.Size(200, 34);
             this.btnLimpiarPanel.TabIndex = 13;
@@ -249,7 +278,7 @@ namespace AdministradorBotica
             // txbMarca
             // 
             this.txbMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMarca.Location = new System.Drawing.Point(306, 162);
+            this.txbMarca.Location = new System.Drawing.Point(306, 115);
             this.txbMarca.Name = "txbMarca";
             this.txbMarca.Size = new System.Drawing.Size(327, 30);
             this.txbMarca.TabIndex = 10;
@@ -257,7 +286,7 @@ namespace AdministradorBotica
             // txbCompra
             // 
             this.txbCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCompra.Location = new System.Drawing.Point(306, 235);
+            this.txbCompra.Location = new System.Drawing.Point(306, 188);
             this.txbCompra.Name = "txbCompra";
             this.txbCompra.Size = new System.Drawing.Size(327, 30);
             this.txbCompra.TabIndex = 9;
@@ -265,7 +294,7 @@ namespace AdministradorBotica
             // txbVenta
             // 
             this.txbVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbVenta.Location = new System.Drawing.Point(306, 271);
+            this.txbVenta.Location = new System.Drawing.Point(306, 224);
             this.txbVenta.Name = "txbVenta";
             this.txbVenta.Size = new System.Drawing.Size(327, 30);
             this.txbVenta.TabIndex = 8;
@@ -273,7 +302,7 @@ namespace AdministradorBotica
             // txbNombre
             // 
             this.txbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNombre.Location = new System.Drawing.Point(306, 126);
+            this.txbNombre.Location = new System.Drawing.Point(306, 79);
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(327, 30);
             this.txbNombre.TabIndex = 7;
@@ -283,7 +312,7 @@ namespace AdministradorBotica
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(67, 129);
+            this.label5.Location = new System.Drawing.Point(67, 82);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 25);
             this.label5.TabIndex = 1;
@@ -294,7 +323,7 @@ namespace AdministradorBotica
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(67, 165);
+            this.label9.Location = new System.Drawing.Point(67, 118);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(91, 25);
             this.label9.TabIndex = 5;
@@ -305,10 +334,11 @@ namespace AdministradorBotica
             this.dgvAgregar.AllowUserToAddRows = false;
             this.dgvAgregar.AllowUserToDeleteRows = false;
             this.dgvAgregar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAgregar.Location = new System.Drawing.Point(0, 515);
+            this.dgvAgregar.Location = new System.Drawing.Point(0, 420);
             this.dgvAgregar.Name = "dgvAgregar";
             this.dgvAgregar.ReadOnly = true;
-            this.dgvAgregar.Size = new System.Drawing.Size(934, 261);
+            this.dgvAgregar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvAgregar.Size = new System.Drawing.Size(934, 256);
             this.dgvAgregar.TabIndex = 0;
             // 
             // label7
@@ -316,7 +346,7 @@ namespace AdministradorBotica
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(67, 274);
+            this.label7.Location = new System.Drawing.Point(67, 227);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(198, 25);
             this.label7.TabIndex = 3;
@@ -327,7 +357,7 @@ namespace AdministradorBotica
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(67, 238);
+            this.label8.Location = new System.Drawing.Point(67, 191);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(218, 25);
             this.label8.TabIndex = 4;
@@ -354,7 +384,7 @@ namespace AdministradorBotica
             this.panelEli.Controls.Add(this.groupBox3);
             this.panelEli.Location = new System.Drawing.Point(254, 12);
             this.panelEli.Name = "panelEli";
-            this.panelEli.Size = new System.Drawing.Size(934, 776);
+            this.panelEli.Size = new System.Drawing.Size(934, 676);
             this.panelEli.TabIndex = 18;
             // 
             // txbIDEli
@@ -505,7 +535,7 @@ namespace AdministradorBotica
             this.dgvEliMod.Name = "dgvEliMod";
             this.dgvEliMod.ReadOnly = true;
             this.dgvEliMod.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvEliMod.Size = new System.Drawing.Size(934, 386);
+            this.dgvEliMod.Size = new System.Drawing.Size(934, 286);
             this.dgvEliMod.TabIndex = 19;
             this.dgvEliMod.SelectionChanged += new System.EventHandler(this.dgvEliMod_SelectionChanged);
             // 
@@ -593,8 +623,10 @@ namespace AdministradorBotica
             this.dgvIn.Location = new System.Drawing.Point(0, 350);
             this.dgvIn.Name = "dgvIn";
             this.dgvIn.ReadOnly = true;
-            this.dgvIn.Size = new System.Drawing.Size(931, 426);
+            this.dgvIn.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvIn.Size = new System.Drawing.Size(931, 326);
             this.dgvIn.TabIndex = 0;
+            this.dgvIn.SelectionChanged += new System.EventHandler(this.dgvIn_SelectionChanged);
             // 
             // groupBox2
             // 
@@ -612,41 +644,17 @@ namespace AdministradorBotica
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "MOSTRAR";
             // 
-            // btnPasIn
+            // btnAmpIn
             // 
-            this.btnPasIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPasIn.ForeColor = System.Drawing.Color.Black;
-            this.btnPasIn.Location = new System.Drawing.Point(20, 29);
-            this.btnPasIn.Name = "btnPasIn";
-            this.btnPasIn.Size = new System.Drawing.Size(161, 61);
-            this.btnPasIn.TabIndex = 21;
-            this.btnPasIn.Text = "PASTILLAS";
-            this.btnPasIn.UseVisualStyleBackColor = true;
-            this.btnPasIn.Click += new System.EventHandler(this.btnPasIn_Click);
-            // 
-            // btnJarIn
-            // 
-            this.btnJarIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJarIn.ForeColor = System.Drawing.Color.Black;
-            this.btnJarIn.Location = new System.Drawing.Point(187, 29);
-            this.btnJarIn.Name = "btnJarIn";
-            this.btnJarIn.Size = new System.Drawing.Size(161, 61);
-            this.btnJarIn.TabIndex = 26;
-            this.btnJarIn.Text = "JARABES";
-            this.btnJarIn.UseVisualStyleBackColor = true;
-            this.btnJarIn.Click += new System.EventHandler(this.btnJarIn_Click);
-            // 
-            // btnBazIn
-            // 
-            this.btnBazIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBazIn.ForeColor = System.Drawing.Color.Black;
-            this.btnBazIn.Location = new System.Drawing.Point(688, 29);
-            this.btnBazIn.Name = "btnBazIn";
-            this.btnBazIn.Size = new System.Drawing.Size(161, 61);
-            this.btnBazIn.TabIndex = 23;
-            this.btnBazIn.Text = "BAZAR";
-            this.btnBazIn.UseVisualStyleBackColor = true;
-            this.btnBazIn.Click += new System.EventHandler(this.btnBazIn_Click);
+            this.btnAmpIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAmpIn.ForeColor = System.Drawing.Color.Black;
+            this.btnAmpIn.Location = new System.Drawing.Point(354, 29);
+            this.btnAmpIn.Name = "btnAmpIn";
+            this.btnAmpIn.Size = new System.Drawing.Size(161, 61);
+            this.btnAmpIn.TabIndex = 25;
+            this.btnAmpIn.Text = "AMPOLLAS";
+            this.btnAmpIn.UseVisualStyleBackColor = true;
+            this.btnAmpIn.Click += new System.EventHandler(this.btnAmpIn_Click);
             // 
             // btnAccIn
             // 
@@ -660,17 +668,41 @@ namespace AdministradorBotica
             this.btnAccIn.UseVisualStyleBackColor = true;
             this.btnAccIn.Click += new System.EventHandler(this.btnAccIn_Click);
             // 
-            // btnAmpIn
+            // btnBazIn
             // 
-            this.btnAmpIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAmpIn.ForeColor = System.Drawing.Color.Black;
-            this.btnAmpIn.Location = new System.Drawing.Point(354, 29);
-            this.btnAmpIn.Name = "btnAmpIn";
-            this.btnAmpIn.Size = new System.Drawing.Size(161, 61);
-            this.btnAmpIn.TabIndex = 25;
-            this.btnAmpIn.Text = "AMPOLLAS";
-            this.btnAmpIn.UseVisualStyleBackColor = true;
-            this.btnAmpIn.Click += new System.EventHandler(this.btnAmpIn_Click);
+            this.btnBazIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBazIn.ForeColor = System.Drawing.Color.Black;
+            this.btnBazIn.Location = new System.Drawing.Point(688, 29);
+            this.btnBazIn.Name = "btnBazIn";
+            this.btnBazIn.Size = new System.Drawing.Size(161, 61);
+            this.btnBazIn.TabIndex = 23;
+            this.btnBazIn.Text = "BAZAR";
+            this.btnBazIn.UseVisualStyleBackColor = true;
+            this.btnBazIn.Click += new System.EventHandler(this.btnBazIn_Click);
+            // 
+            // btnJarIn
+            // 
+            this.btnJarIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJarIn.ForeColor = System.Drawing.Color.Black;
+            this.btnJarIn.Location = new System.Drawing.Point(187, 29);
+            this.btnJarIn.Name = "btnJarIn";
+            this.btnJarIn.Size = new System.Drawing.Size(161, 61);
+            this.btnJarIn.TabIndex = 26;
+            this.btnJarIn.Text = "JARABES";
+            this.btnJarIn.UseVisualStyleBackColor = true;
+            this.btnJarIn.Click += new System.EventHandler(this.btnJarIn_Click);
+            // 
+            // btnPasIn
+            // 
+            this.btnPasIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPasIn.ForeColor = System.Drawing.Color.Black;
+            this.btnPasIn.Location = new System.Drawing.Point(20, 29);
+            this.btnPasIn.Name = "btnPasIn";
+            this.btnPasIn.Size = new System.Drawing.Size(161, 61);
+            this.btnPasIn.TabIndex = 21;
+            this.btnPasIn.Text = "PASTILLAS";
+            this.btnPasIn.UseVisualStyleBackColor = true;
+            this.btnPasIn.Click += new System.EventHandler(this.btnPasIn_Click);
             // 
             // label16
             // 
@@ -702,7 +734,7 @@ namespace AdministradorBotica
             this.panelInventario.Controls.Add(this.dgvIn);
             this.panelInventario.Location = new System.Drawing.Point(254, 12);
             this.panelInventario.Name = "panelInventario";
-            this.panelInventario.Size = new System.Drawing.Size(934, 776);
+            this.panelInventario.Size = new System.Drawing.Size(934, 676);
             this.panelInventario.TabIndex = 17;
             // 
             // btnBuscar
@@ -717,23 +749,13 @@ namespace AdministradorBotica
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::AdministradorBotica.Properties.Resources.logo_farma;
-            this.pictureBox2.Location = new System.Drawing.Point(271, 171);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(400, 400);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::AdministradorBotica.Properties.Resources.FondodeUsuario;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.btnInventario);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnAgregar);
@@ -743,8 +765,24 @@ namespace AdministradorBotica
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(236, 776);
+            this.panel1.Size = new System.Drawing.Size(236, 676);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(117)))), ((int)(((byte)(129)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(70)))), ((int)(((byte)(88)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(166)))), ((int)(((byte)(173)))));
+            this.button1.Location = new System.Drawing.Point(0, 314);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(236, 47);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Agregar Stock";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnEliminar
             // 
@@ -754,7 +792,7 @@ namespace AdministradorBotica
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(70)))), ((int)(((byte)(88)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(166)))), ((int)(((byte)(173)))));
-            this.btnEliminar.Location = new System.Drawing.Point(0, 314);
+            this.btnEliminar.Location = new System.Drawing.Point(0, 367);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(236, 47);
             this.btnEliminar.TabIndex = 10;
@@ -770,28 +808,13 @@ namespace AdministradorBotica
             this.btnInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(70)))), ((int)(((byte)(88)))));
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(166)))), ((int)(((byte)(173)))));
-            this.btnInventario.Location = new System.Drawing.Point(0, 367);
+            this.btnInventario.Location = new System.Drawing.Point(0, 420);
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Size = new System.Drawing.Size(236, 47);
             this.btnInventario.TabIndex = 9;
             this.btnInventario.Text = "Inventario";
             this.btnInventario.UseVisualStyleBackColor = false;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(117)))), ((int)(((byte)(129)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(70)))), ((int)(((byte)(88)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(166)))), ((int)(((byte)(173)))));
-            this.button1.Location = new System.Drawing.Point(0, 517);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(236, 47);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Consulta Ventas";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
@@ -800,7 +823,7 @@ namespace AdministradorBotica
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(150)))), ((int)(((byte)(173)))));
-            this.label4.Location = new System.Drawing.Point(95, 726);
+            this.label4.Location = new System.Drawing.Point(94, 645);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 7;
@@ -811,7 +834,7 @@ namespace AdministradorBotica
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(61)))));
-            this.label3.Location = new System.Drawing.Point(-3, 683);
+            this.label3.Location = new System.Drawing.Point(-3, 602);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(239, 23);
             this.label3.TabIndex = 6;
@@ -829,7 +852,7 @@ namespace AdministradorBotica
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(236, 47);
             this.btnAgregar.TabIndex = 5;
-            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Text = "Agregar Productos";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -841,7 +864,7 @@ namespace AdministradorBotica
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(70)))), ((int)(((byte)(88)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(166)))), ((int)(((byte)(173)))));
-            this.btnSalir.Location = new System.Drawing.Point(0, 570);
+            this.btnSalir.Location = new System.Drawing.Point(0, 552);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(236, 47);
             this.btnSalir.TabIndex = 4;
@@ -881,23 +904,211 @@ namespace AdministradorBotica
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // panelStock
+            // 
+            this.panelStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(103)))), ((int)(((byte)(117)))));
+            this.panelStock.Controls.Add(this.txbIdSto);
+            this.panelStock.Controls.Add(this.label19);
+            this.panelStock.Controls.Add(this.btnAgrSto);
+            this.panelStock.Controls.Add(this.txbAgrSto);
+            this.panelStock.Controls.Add(this.label18);
+            this.panelStock.Controls.Add(this.dgvStock);
+            this.panelStock.Controls.Add(this.btnBus);
+            this.panelStock.Controls.Add(this.txbNomSto);
+            this.panelStock.Controls.Add(this.label17);
+            this.panelStock.Controls.Add(this.groupBox4);
+            this.panelStock.Location = new System.Drawing.Point(254, 12);
+            this.panelStock.Name = "panelStock";
+            this.panelStock.Size = new System.Drawing.Size(934, 676);
+            this.panelStock.TabIndex = 34;
+            // 
+            // txbIdSto
+            // 
+            this.txbIdSto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbIdSto.Location = new System.Drawing.Point(244, 182);
+            this.txbIdSto.Name = "txbIdSto";
+            this.txbIdSto.ReadOnly = true;
+            this.txbIdSto.Size = new System.Drawing.Size(100, 30);
+            this.txbIdSto.TabIndex = 52;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(95, 187);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(37, 25);
+            this.label19.TabIndex = 51;
+            this.label19.Text = "ID:";
+            // 
+            // btnAgrSto
+            // 
+            this.btnAgrSto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgrSto.ForeColor = System.Drawing.Color.Black;
+            this.btnAgrSto.Location = new System.Drawing.Point(712, 283);
+            this.btnAgrSto.Name = "btnAgrSto";
+            this.btnAgrSto.Size = new System.Drawing.Size(161, 61);
+            this.btnAgrSto.TabIndex = 50;
+            this.btnAgrSto.Text = "AGREGAR STOCK";
+            this.btnAgrSto.UseVisualStyleBackColor = true;
+            this.btnAgrSto.Click += new System.EventHandler(this.btnAgrSto_Click);
+            // 
+            // txbAgrSto
+            // 
+            this.txbAgrSto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbAgrSto.Location = new System.Drawing.Point(244, 292);
+            this.txbAgrSto.Name = "txbAgrSto";
+            this.txbAgrSto.Size = new System.Drawing.Size(239, 30);
+            this.txbAgrSto.TabIndex = 49;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(46, 298);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(192, 25);
+            this.label18.TabIndex = 48;
+            this.label18.Text = "AGREGAR STOCK:";
+            // 
+            // dgvStock
+            // 
+            this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStock.Location = new System.Drawing.Point(0, 431);
+            this.dgvStock.Name = "dgvStock";
+            this.dgvStock.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvStock.Size = new System.Drawing.Size(934, 245);
+            this.dgvStock.TabIndex = 47;
+            this.dgvStock.SelectionChanged += new System.EventHandler(this.dgvStock_SelectionChanged);
+            // 
+            // btnBus
+            // 
+            this.btnBus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBus.ForeColor = System.Drawing.Color.Black;
+            this.btnBus.Location = new System.Drawing.Point(712, 174);
+            this.btnBus.Name = "btnBus";
+            this.btnBus.Size = new System.Drawing.Size(161, 61);
+            this.btnBus.TabIndex = 46;
+            this.btnBus.Text = "BUSCAR";
+            this.btnBus.UseVisualStyleBackColor = true;
+            this.btnBus.Click += new System.EventHandler(this.btnBus_Click);
+            // 
+            // txbNomSto
+            // 
+            this.txbNomSto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNomSto.Location = new System.Drawing.Point(244, 225);
+            this.txbNomSto.Name = "txbNomSto";
+            this.txbNomSto.Size = new System.Drawing.Size(361, 30);
+            this.txbNomSto.TabIndex = 45;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(95, 230);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(104, 25);
+            this.label17.TabIndex = 44;
+            this.label17.Text = "NOMBRE:";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.button5);
+            this.groupBox4.Controls.Add(this.button6);
+            this.groupBox4.Controls.Add(this.button7);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.Color.White;
+            this.groupBox4.Location = new System.Drawing.Point(24, 18);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(898, 112);
+            this.groupBox4.TabIndex = 43;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "MOSTRAR";
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(354, 29);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(161, 61);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "AMPOLLAS";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(521, 29);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(161, 61);
+            this.button4.TabIndex = 24;
+            this.button4.Text = "ACCESORIOS";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(688, 29);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(161, 61);
+            this.button5.TabIndex = 23;
+            this.button5.Text = "BAZAR";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.Black;
+            this.button6.Location = new System.Drawing.Point(187, 29);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(161, 61);
+            this.button6.TabIndex = 26;
+            this.button6.Text = "JARABES";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.Black;
+            this.button7.Location = new System.Drawing.Point(20, 29);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(161, 61);
+            this.button7.TabIndex = 21;
+            this.button7.Text = "PASTILLAS";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
             // MainAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(76)))), ((int)(((byte)(97)))));
-            this.ClientSize = new System.Drawing.Size(1200, 800);
+            this.ClientSize = new System.Drawing.Size(1200, 701);
+            this.Controls.Add(this.panelStock);
             this.Controls.Add(this.panelEli);
             this.Controls.Add(this.panelInventario);
             this.Controls.Add(this.panelAgregar);
             this.Controls.Add(this.panelInicial);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PrincipalMain";
+            this.Text = "ADMINISTRADOR";
             this.Load += new System.EventHandler(this.MainAdmin_Load);
             this.panelInicial.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelAgregar.ResumeLayout(false);
             this.panelAgregar.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -910,10 +1121,13 @@ namespace AdministradorBotica
             this.groupBox2.ResumeLayout(false);
             this.panelInventario.ResumeLayout(false);
             this.panelInventario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelStock.ResumeLayout(false);
+            this.panelStock.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -927,7 +1141,6 @@ namespace AdministradorBotica
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -985,5 +1198,22 @@ namespace AdministradorBotica
         private System.Windows.Forms.TextBox txbBuscar;
         private System.Windows.Forms.Panel panelInventario;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panelStock;
+        private System.Windows.Forms.Button btnAgrSto;
+        private System.Windows.Forms.TextBox txbAgrSto;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.DataGridView dgvStock;
+        private System.Windows.Forms.Button btnBus;
+        private System.Windows.Forms.TextBox txbNomSto;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox txbIdSto;
+        private System.Windows.Forms.Label label19;
     }
 }

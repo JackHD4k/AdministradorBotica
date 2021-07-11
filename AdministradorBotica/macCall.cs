@@ -2,7 +2,7 @@
 
 namespace AdministradorBotica
 {
-    class macCall
+    internal class macCall
     {
         static public string GetMacAddresss()
         {

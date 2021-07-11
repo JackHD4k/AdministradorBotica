@@ -12,11 +12,22 @@ namespace AdministradorBotica
             InitializeComponent();
         }
 
-        SQLiteConnection con = new SQLiteConnection("Data Source = Z:/AdministradorBotica/AdministradorBotica/database.db");
+        private SQLiteConnection con = new SQLiteConnection("Data Source = C:/database.db");
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            string title = "Salir";
+            string message = "Esta seguro que desea salir?";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult dialogResult = MessageBox.Show(message, title, buttons);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                //No procede con la limpieza
+            }
         }
 
         private void MainAdmin_Load(object sender, EventArgs e)
@@ -25,6 +36,7 @@ namespace AdministradorBotica
             panelAgregar.Visible = false;
             panelEli.Visible = false;
             panelInventario.Visible = false;
+            panelStock.Visible = false;
             refrescartabla();
         }
 
@@ -36,6 +48,7 @@ namespace AdministradorBotica
             panelAgregar.Visible = true;
             panelInventario.Visible = false;
             panelEli.Visible = false;
+            panelStock.Visible = false;
             refrescartabla();
             con.Close();
         }
@@ -59,8 +72,8 @@ namespace AdministradorBotica
 
         private void btnAgregarPanel_Click(object sender, EventArgs e)
         {
-
         }
+
         private void refrescartabla()
         {
             string select = "SELECT ID_PRO as ID, NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf('% .2f',PCO_PRO) as 'Precio de compra', printf('% .2f',PVE_PRO) as 'Precio de venta' from PRODUCTO";
@@ -70,6 +83,7 @@ namespace AdministradorBotica
             dgvAgregar.DataSource = tabla;
             dgvIn.DataSource = tabla;
             dgvEliMod.DataSource = tabla;
+            dgvStock.DataSource = tabla;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -130,6 +144,7 @@ namespace AdministradorBotica
             panelAgregar.Visible = false;
             panelInventario.Visible = true;
             panelEli.Visible = false;
+            panelStock.Visible = false;
             refrescartabla();
             con.Close();
         }
@@ -187,6 +202,7 @@ namespace AdministradorBotica
             panelAgregar.Visible = false;
             panelInventario.Visible = false;
             panelEli.Visible = true;
+            panelStock.Visible = false;
             refrescartabla();
             con.Close();
         }
@@ -277,7 +293,7 @@ namespace AdministradorBotica
             {
                 var cmd = new SQLiteCommand(con);
                 con.Open();
-                cmd.CommandText = "update producto set NOM_PRO = '"+ txbNombreEli.Text +"', MAR_PRO = '"+ txbMarcaEli.Text +"', STO_PRO = '"+ txbStoEli.Text +"', PVE_PRO = '"+ txbVenEli.Text +"', PCO_PRO = '"+ txbComEli.Text +"' where ID_PRO = '" + txbIDEli.Text + "'";
+                cmd.CommandText = "update producto set NOM_PRO = '" + txbNombreEli.Text + "', MAR_PRO = '" + txbMarcaEli.Text + "', STO_PRO = '" + txbStoEli.Text + "', PVE_PRO = '" + txbVenEli.Text + "', PCO_PRO = '" + txbComEli.Text + "' where ID_PRO = '" + txbIDEli.Text + "'";
                 cmd.ExecuteNonQuery();
                 refrescartabla();
                 con.Close();
@@ -307,6 +323,100 @@ namespace AdministradorBotica
                 e.Handled = true;
                 btnBuscar_Click(sender, e);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            panelInicial.Visible = false;
+            panelAgregar.Visible = false;
+            panelInventario.Visible = false;
+            panelEli.Visible = false;
+            panelStock.Visible = true;
+            refrescartabla();
+            con.Close();
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            string select = "SELECT ID_PRO as ID, NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf(' % .2f', PCO_PRO) as 'Precio de compra', printf(' % .2f', PVE_PRO) as 'Precio de venta' from PRODUCTO WHERE ID_CAT = 1";
+            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
+            DataTable tabla = new DataTable();
+            adb.Fill(tabla);
+            dgvStock.DataSource = tabla;
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            string select = "SELECT ID_PRO as ID, NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf(' % .2f', PCO_PRO) as 'Precio de compra', printf(' % .2f', PVE_PRO) as 'Precio de venta' from PRODUCTO WHERE ID_CAT = 2";
+            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
+            DataTable tabla = new DataTable();
+            adb.Fill(tabla);
+            dgvStock.DataSource = tabla;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string select = "SELECT ID_PRO as ID, NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf(' % .2f', PCO_PRO) as 'Precio de compra', printf(' % .2f', PVE_PRO) as 'Precio de venta' from PRODUCTO WHERE ID_CAT = 3";
+            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
+            DataTable tabla = new DataTable();
+            adb.Fill(tabla);
+            dgvStock.DataSource = tabla;
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            string select = "SELECT ID_PRO as ID, NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf(' % .2f', PCO_PRO) as 'Precio de compra', printf(' % .2f', PVE_PRO) as 'Precio de venta' from PRODUCTO WHERE ID_CAT = 4";
+            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
+            DataTable tabla = new DataTable();
+            adb.Fill(tabla);
+            dgvStock.DataSource = tabla;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string select = "SELECT ID_PRO as ID, NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf(' % .2f', PCO_PRO) as 'Precio de compra', printf(' % .2f', PVE_PRO) as 'Precio de venta' from PRODUCTO WHERE ID_CAT = 5";
+            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
+            DataTable tabla = new DataTable();
+            adb.Fill(tabla);
+            dgvStock.DataSource = tabla;
+        }
+
+        private void btnBus_Click(object sender, EventArgs e)
+        {
+            var cmd = new SQLiteCommand(con);
+            con.Open();
+            string select = "SELECT ID_PRO as ID, NOM_PRO as NOMBRE, MAR_PRO AS MARCA, STO_PRO AS STOCK, printf(' % .2f', PCO_PRO) as 'Precio de compra', printf(' % .2f', PVE_PRO) as 'Precio de venta' from PRODUCTO WHERE NOM_PRO like '" + txbNomSto.Text + "%'";
+            SQLiteDataAdapter adb = new SQLiteDataAdapter(select, con);
+            DataTable tabla = new DataTable();
+            adb.Fill(tabla);
+            dgvStock.DataSource = tabla;
+            con.Close();
+        }
+
+        private void button7_Click_2(object sender, EventArgs e)
+        {
+        }
+
+        private void btnAgrSto_Click(object sender, EventArgs e)
+        {
+            var cmd = new SQLiteCommand(con);
+            con.Open();
+            cmd.CommandText = "UPDATE PRODUCTO SET STO_PRO = STO_PRO + '" + txbAgrSto.Text + "' WHERE ID_PRO = '" + txbIdSto.Text + "'";
+            cmd.ExecuteNonQuery();
+            refrescartabla();
+            con.Close();
+        }
+
+        private void dgvStock_SelectionChanged(object sender, EventArgs e)
+        {
+            txbIdSto.Text = dgvStock.Rows[dgvStock.CurrentCellAddress.Y].Cells[0].Value.ToString();
+            txbNomSto.Text = dgvStock.Rows[dgvStock.CurrentCellAddress.Y].Cells[1].Value.ToString();
+        }
+
+        private void dgvIn_SelectionChanged(object sender, EventArgs e)
+        {
+            txbBuscar.Text = dgvIn.Rows[dgvIn.CurrentCellAddress.Y].Cells[1].Value.ToString();
         }
     }
 }
