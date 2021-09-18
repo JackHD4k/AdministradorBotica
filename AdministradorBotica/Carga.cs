@@ -17,7 +17,7 @@ namespace AdministradorBotica
             {
                 timer1.Stop();
                 string mac = macCall.GetMacAddresss();
-                if (mac == "080027ADFB45")
+                if (mac == "0A0027000007")
                 {
                     this.Hide();
                     Usuario usuario = new Usuario();

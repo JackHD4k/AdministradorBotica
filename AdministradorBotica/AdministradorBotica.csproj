@@ -55,10 +55,10 @@
     <StartupObject>AdministradorBotica.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5B5F713EDFF2389738D98EA6AFA540DB0C695BE6</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>D78DB5451DE7A30E3DC570D763C301386B7F7D76</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>AdministradorBotica_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>AdministradorBotica_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -148,6 +148,7 @@
     <EmbeddedResource Include="Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="AdministradorBotica_1_TemporaryKey.pfx" />
     <None Include="AdministradorBotica_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
