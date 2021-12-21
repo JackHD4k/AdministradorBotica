@@ -12,7 +12,7 @@ namespace AdministradorBotica
             InitializeComponent();
         }
 
-        private SQLiteConnection con = new SQLiteConnection("Data Source = C:/database.db");
+        private SQLiteConnection con = new SQLiteConnection("Data Source = C:/Users/Joel/Documents/database.db");
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
